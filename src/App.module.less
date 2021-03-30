@@ -1,0 +1,73 @@
+@import "~antd/lib/style/themes/default.less";
+.content {
+	height: 100%;
+	@contentWidth:1200px;
+    :global{
+		// .ant-tabs-bar{
+		// 	margin:0 0 0 0;
+		// }
+		// .ant-tabs:not(.ant-tabs-vertical) > .ant-tabs-content{
+		// 	background-color: #fff;
+		// 	border: 1px solid #e8e8e8;
+		// 	border-top: none;
+		// }
+		.ant-layout-content{
+			min-height: auto;
+		}
+		// 头部样式设置
+		.ant-layout-header{
+			background-color: #fff;
+			height: auto;
+			line-height: 50px;
+			min-width: @contentWidth;
+		}
+	}
+	.header{
+		.logo{
+			float: left;
+			>img{
+				display: block;
+				width:150px;
+				height: 50px;
+				background-color: #1890ff;
+			}
+		}
+		.action{
+			float:right;
+			>button:not(first-child){
+				margin-left: 10px;
+			}
+		}
+	}
+}
+.footer{
+    color: @text-color-secondary;
+    font-size: @font-size-base;
+    text-align: center;
+}
+:global {
+	@contentWidth:1200px;
+	.ant-layout {
+		// overflow-x: hidden;
+		overflow-x: scroll;
+		height: 100%;
+		min-width: @contentWidth;
+	}
+	.ant-layout-footer {
+		padding: 10px 50px;
+	}
+	@media (max-height: 600px) {
+		.ant-layout-footer {
+			padding: 10px 50px;
+			padding:0px 5px;
+		}
+	}
+	@media (max-width: 576px) {
+		.ant-layout-footer {
+			padding:5px 0px;
+		}
+	}
+	.ant-tooltip-inner{
+		white-space: pre-wrap;
+	}
+}

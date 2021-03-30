@@ -1,0 +1,38 @@
+@{ 
+    Layout = null; 
+}
+<!DOCTYPE html>
+<html>
+
+<head lang="zh-cn">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link type="text/css" rel="stylesheet"  href="/lib/antd.min.css" />
+    <link rel="stylesheet" href="/bundles/<%= htmlWebpackPlugin.options.entry%>.bundle.css?v=<%= htmlWebpackPlugin.options.version %>" />
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <script>
+        var app= {
+            apiBasePath:'http://10.45.24.156:6001/',
+            basePath:''
+        }
+    </script>
+</head>
+
+<body>
+    <div id="root">53454354353</div>
+    <script src="/lib/react.production.min.js?v=16.12.0"></script>
+    <script src="/lib/react-dom.production.min.js?v=16.12.0"></script>
+    <script src="/lib/antd.min.js?v=16.12.0"></script>
+    <script src="/lib/moment-with-locales.min.js?v=16.12.0"></script>
+    <script src="/bundles/vendor.dll.js" ></script>
+    <script src="/bundles/<%= htmlWebpackPlugin.options.entry%>.js?v=<%= htmlWebpackPlugin.options.version %>"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="zh-cn">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <script>
+    </script>
+</head>
+
+<body>
+    <div id="root">
+    </div>
+    <script src="lib/react.production.min.js?v=16.12.0"></script>
+    <script src="lib/react-dom.production.min.js?v=16.12.0"></script>
+    <script src="js/<%= htmlWebpackPlugin.options.entry%>.bundle.js?v=<%= htmlWebpackPlugin.options.version %>"></script>
+</body>
+</html>
