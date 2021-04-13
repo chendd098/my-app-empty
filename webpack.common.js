@@ -3,12 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 var LessPluginAutoPrefix = require('less-plugin-autoprefix')
 var autoprefixPlugin = new LessPluginAutoPrefix()
 var MiniCssExtractPlugin = require("mini-css-extract-plugin")
+var config = require('./config.js');
 module.exports = {
     // 入口js路径
-    entry: {
-        index:'./src/entries/index',
-        login:'./src/entries/login'    
-    },
+    entry: config.development.entries,
     resolve: {
         // 设置module文件包含的路径
         modules: [path.join(__dirname, "./src"), "node_modules"],

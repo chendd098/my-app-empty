@@ -3,6 +3,7 @@ import { Layout, Button } from 'antd'
 const { Header, Footer, Sider, Content } = Layout
 import HomeIndexPage from 'scripts/pages/HomeIndex'
 import Hello from 'scripts/pages/components/Hello'
+import { emitter } from 'remotes'
 
 import { HashRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom";
 // import logo from 'images/logo.svg';
@@ -16,27 +17,15 @@ export interface IAppProps {
 export const App:FC<any> = (props: IAppProps) => {
 
     useEffect(()=>{
-        axiosInstance.interceptors.response.use(
-            (response: any) => {
-                // // 对响应数据做点什么
-                // const { status, data, success } = response
-                // console.log('interceptors',response)
-                // // 错误处理
-                // if (status === 200 && !success){
-                //     console.log('fail unify',data)
-                //     return
-                // }
-                // // 异常处理
-                // if (status === 403){
-                //     console.log('error',data)
-                //     return
-                // }
-                return response.data
-            },
-            error => {
-                // 对响应错误做点什么
-            }
-        )
+        emitter.on('fail',(response:any)=>{
+            console.log(response)
+            let { data } = response
+
+        })
+        emitter.on('error',(response:any)=>{
+            console.log(response)
+            let { data } = response
+        })
     },[])
     return(
         <div className={styles.content}>
