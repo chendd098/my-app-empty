@@ -2,7 +2,8 @@ var path = require('path')
 var {merge} = require('webpack-merge');
 var common = require('./webpack.common');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack');
+const webpack = require('webpack')
+const TerserPlugin = require("terser-webpack-plugin")
 var config = require('./config.js')
 var plugins = []
 var htmls = config.MVCHtmlWebpackPlugin
@@ -48,6 +49,15 @@ module.exports = merge(common, {
         new webpack.DllReferencePlugin({
             context:__dirname,
             manifest: require('../wwwroot/bundles/vendor.json'),
+        }),
+        new TerserPlugin({
+            parallel:4,
+            terserOptions:{
+                compress:{
+                    drop_console: true,
+                    drop_debugger: true,
+                }
+            }
         })
     ]).concat(common.plugins)).concat(
         plugins

@@ -12,7 +12,7 @@
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <link type="text/css" rel="stylesheet"  href="../node_modules/antd/dist/antd.css" />
-    <link rel="stylesheet" href="css/<%= htmlWebpackPlugin.options.entry%>.bundle.css?v=<%= htmlWebpackPlugin.options.version %>" />
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.entry%>.bundle.css?v=<%= htmlWebpackPlugin.options.version %>" />
 
     <title>React dist</title>
     <script>
@@ -28,6 +28,6 @@
     <script src="../node_modules/react/umd/react.production.min.js"></script>
     <script src="../node_modules/react-dom/umd/react-dom.production.min.js"></script>
     <script src="../node_modules/antd/dist/antd.min.js"></script>
-    <script src="js/<%= htmlWebpackPlugin.options.entry%>.bundle.js?v=<%= htmlWebpackPlugin.options.version %>"></script>
+    <script src="<%= htmlWebpackPlugin.options.entry%>.bundle.js?v=<%= htmlWebpackPlugin.options.version %>"></script>
 </body>
 </html>

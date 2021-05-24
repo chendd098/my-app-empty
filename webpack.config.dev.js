@@ -35,6 +35,7 @@ module.exports = merge(common, {
         // chunkFilename: 'js/[name].[hash].chunk.js',
         // assetModuleFilename: 'images/[hash][ext][query]'
     },
+	devtool: 'eval-source-map',// 开发环境代码定位到行上
     // 动态监测并实时更新页面
     devServer:{
         // 内容的基础路径

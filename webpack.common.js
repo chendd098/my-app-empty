@@ -97,12 +97,22 @@ module.exports = {
 				// 		limit: 30000
 				// 	}
                 // }]
-                type:'asset/resource',
+                type: 'asset',
+                parser: {
+                    dataUrlCondition: {
+                      maxSize: 4 * 1024 // 4kb
+                    }
+                }
 			},
 			{
 				test: /\.(svg|ttf|eot|woff(\(?2\)?)?)(\?[a-zA-Z_0-9.=&]*)?(#[a-zA-Z_0-9.=&]*)?$/,
                 // loader: 'file-loader'
-                type: 'asset/resource'
+                type: 'asset',
+                parser: {
+                    dataUrlCondition: {
+                      maxSize: 4 * 1024 // 4kb
+                    }
+                }
 			}
         ],
     },

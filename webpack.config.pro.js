@@ -27,8 +27,8 @@ module.exports = merge(common, {
     // 编译输出的js及路径
     output: {
         path: path.resolve(__dirname, 'dist'),
-        // filename: 'js/[name].bundle.js',
-        // chunkFilename: 'js/[name].[hash].chunk.js',
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].[hash].chunk.js',
         // assetModuleFilename: 'images/[hash][ext][query]'
     },
     optimization: {
